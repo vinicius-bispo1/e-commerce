@@ -1,14 +1,23 @@
-import React from 'react'
+import * as S from './Styled'
 import { FaUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
+import web from '../../assets/Web Compras.png'
 
 export default function Header() {
   return (
-    <header>
-        <h2>Web Compras</h2>
-        <input type="text" />
+    <S.Header>
+        <img src={web} alt="" />
+        <S.BoxMenu>
+          <ul>
+            <li>Mais vendidos</li>
+            <li>Eletrodoméstico</li>
+            <li>Informática</li>
+          </ul>
+        </S.BoxMenu>   
+        <S.BoxIcon>
         <FaUser />
         <FaShoppingCart />
-    </header>
+        </S.BoxIcon>
+    </S.Header>
   )
 }
