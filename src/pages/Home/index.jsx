@@ -1,4 +1,4 @@
-import React from "react";
+import * as S from './Styled'
 import Header from "../../Components/Header";
 import { FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -7,19 +7,18 @@ export default function Home() {
   return (
     <>
       <Header />
-
       <main>
-        <section>
-          <div>
+        <S.ContainerBusca>
+          <S.BoxCep>
             <FaLocationDot />
             <h2>Informe seu CEP</h2>
-          </div>
+          </S.BoxCep>
 
-          <div>
+          <S.BoxInput>
             <input type="text" />
             <FaSearch />
-          </div>
-        </section>
+          </S.BoxInput>
+        </S.ContainerBusca>
       </main>
     </>
   );

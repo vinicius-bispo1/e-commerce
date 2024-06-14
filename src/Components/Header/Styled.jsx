@@ -5,7 +5,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
-
 export const Header = styled.header`
 /* border: solid 1px red; */
 height: 15vh;
@@ -23,7 +22,6 @@ ul{
     font-weight: 700;
 }
 `
-
 export const BoxIcon = styled.div`
 /* border: solid 1px red; */
 font-size: 30px;
