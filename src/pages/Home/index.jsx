@@ -26,10 +26,11 @@ export default function Home() {
         <S.ContainerProdutos>
           <S.BoxProdutos>
             {Produtos.map((item) => (
-              <Card
+              <Card style={{color: "red"}}
                 descricao={item.descricao}
                 preco={item.preco}
                 imagem={item.imagem}
+                status={item.status}
               />
             ))}
           </S.BoxProdutos>

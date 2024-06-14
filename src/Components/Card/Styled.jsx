@@ -22,4 +22,5 @@ export const H2 = styled.h2`
 
 export const Span = styled.span`
   color: #008a00;
+  color: ${props => props.cor == "à vista no Pix" ? "green" : props.cor == "Indisponível" ? "red" : "#FEBC14" };
 `;
