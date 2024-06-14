@@ -17,7 +17,7 @@ export default function Home() {
           </S.BoxCep>
 
           <S.BoxInput>
-            <input type="text" />
+            <input type="text" placeholder='busque aqui seu produto' />
             <FaSearch />
 
           </S.BoxInput>

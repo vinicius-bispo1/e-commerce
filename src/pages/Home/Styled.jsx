@@ -7,16 +7,34 @@ align-items: center;
 `
 
 export const ContainerBusca = styled.section`
-border: solid 1px red;
 ${center}
 justify-content: space-around;
 background-color: #454C59;
 height: 17vh;
 `
 export const BoxCep = styled.div`
-
+${center}
+justify-content: space-between;
+color: white;
+font-size: 20px;
+gap: 15px;
 `
-
 export const BoxInput = styled.div`
-border: solid 1px;
+/* border: solid 1px; */
+font-size: 20px;
+background-color: white;
+border-radius: 5px;
+padding-right: 10px;
+${center}
+cursor: pointer;
+input{
+    border: solid 1px;
+    padding: 10px;
+    width: 23vw;
+    height: 5vh;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
 `
