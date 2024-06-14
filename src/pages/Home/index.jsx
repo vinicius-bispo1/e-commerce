@@ -22,8 +22,6 @@ export default function Home() {
 
           </S.BoxInput>
         </S.ContainerBusca>
-          </div>
-        </section>
 
         {/* Produtos */}
         <section>
