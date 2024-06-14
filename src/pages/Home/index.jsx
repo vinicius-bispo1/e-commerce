@@ -1,4 +1,4 @@
-import * as S from './Styled'
+import * as S from "./Styled";
 import Header from "../../Components/Header";
 import { FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -19,13 +19,12 @@ export default function Home() {
           <S.BoxInput>
             <input type="text" placeholder='busque aqui seu produto' />
             <FaSearch />
-
           </S.BoxInput>
         </S.ContainerBusca>
 
         {/* Produtos */}
-        <section>
-          <div>
+        <S.ContainerProdutos>
+          <S.BoxProdutos>
             {Produtos.map((item) => (
               <Card
                 descricao={item.descricao}
@@ -33,8 +32,8 @@ export default function Home() {
                 imagem={item.imagem}
               />
             ))}
-          </div>
-        </section>
+          </S.BoxProdutos>
+        </S.ContainerProdutos>
       </main>
     </>
   );

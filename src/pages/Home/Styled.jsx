@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components";
 
 const center = css`
-display: flex;
-justify-content: center;
-align-items: center;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const ContainerBusca = styled.section`
+
 ${center}
 justify-content: space-around;
 background-color: #454C59;
@@ -38,3 +39,17 @@ input{
     outline: none;
 }
 `
+
+export const ContainerProdutos = styled.section`
+  border: solid;
+  display: flex;
+  justify-content: center;
+`;
+export const BoxProdutos = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90vw;
+  max-width: 1100px;
+`;
+
