@@ -7,11 +7,11 @@ const center = css`
 `;
 
 export const ContainerBusca = styled.section`
-
 ${center}
 justify-content: space-around;
 background-color: #454C59;
 height: 17vh;
+margin-bottom: 50px;
 `
 export const BoxCep = styled.div`
 ${center}
@@ -41,7 +41,6 @@ input{
 `
 
 export const ContainerProdutos = styled.section`
-  border: solid;
   display: flex;
   justify-content: center;
 `;
