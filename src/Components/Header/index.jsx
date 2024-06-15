@@ -11,7 +11,7 @@ export default function Header() {
           <ul>
             <li>Mais vendidos</li>
             <li>Eletrodoméstico</li>
-            <li>Informática</li>
+            <li>Tecnologia</li>
           </ul>
         </S.BoxMenu>   
         <S.BoxIcon>

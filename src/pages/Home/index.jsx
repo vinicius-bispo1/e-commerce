@@ -18,6 +18,14 @@ export default function Home() {
     }
   }, [modalCep]);
 
+  // Busca filmes
+  const [busca, setBusca] = useState("");
+
+  //  funcionalidade de busca
+  const filtrados = Produtos.filter((item) =>
+    item.descricao.toLowerCase().includes(busca.toLowerCase())
+  );
+
   return (
     <>
       {modalCep}
@@ -31,7 +39,11 @@ export default function Home() {
           </S.BoxCep>
 
           <S.BoxInput>
-            <input type="text" placeholder="busque aqui seu produto" />
+            <input
+              onChange={(e) => setBusca(e.target.value)}
+              type="text"
+              placeholder="busque aqui seu produto"
+            />
             <FaSearch />
           </S.BoxInput>
         </S.ContainerBusca>
@@ -39,7 +51,7 @@ export default function Home() {
         {/* Produtos */}
         <S.ContainerProdutos>
           <S.BoxProdutos>
-            {Produtos.map((item) => (
+            {filtrados.map((item) => (
               <Card
                 style={{ color: "red" }}
                 descricao={item.descricao}
