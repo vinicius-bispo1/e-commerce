@@ -19,6 +19,7 @@ export const BoxCep = styled.div`
   color: white;
   font-size: 20px;
   gap: 15px;
+  cursor: pointer;
 `;
 export const BoxInput = styled.div`
   /* border: solid 1px; */
