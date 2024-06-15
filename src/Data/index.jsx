@@ -7,7 +7,7 @@ import ps5 from "../assets/ps5.png";
 
 export const Produtos = [
   {
-    descricao: "Smartphone Motorola Moto G24 8GB RAM Boost* 128GB Grafite",
+    descricao: "iPhone 14 128GB Preto Tela de 6,1”, Câmera Dupla de 12MP, iOS",
     imagem: celular,
     preco: 800.82,
     status: "Apenas para Devs",
