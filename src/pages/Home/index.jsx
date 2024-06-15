@@ -12,19 +12,24 @@ export default function Home() {
   const fundoRef = useRef(null);
 
   const [cep, setCep] = useState("");
-  const [localidade, setLocalidade] = useState("");
-  const [logradouro, setLogradouro] = useState("");
   const [bairro, setBairro] = useState("");
   const [complemento, setCompleto] = useState("");
+  const [logradouro, setLogradouro] = useState("");
+  const [localidade, setLocalidade] = useState("");
 
   const buscaCep = async () => {
     // 01001000
-    const dados = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-    console.log(dados.data);
-    setLocalidade(dados.data.localidade);
-    setLogradouro(dados.data.logradouro);
-    setBairro(dados.data.bairro);
-    setCompleto(dados.data.complemento);
+
+    try {
+      const dados = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+      console.log(dados.data);
+      setBairro(dados.data.bairro);
+      setCompleto(dados.data.complemento);
+      setLocalidade(dados.data.localidade);
+      setLogradouro(dados.data.logradouro);
+    } catch (err) {
+      alert("Erro na busca, tente novamente...");
+    }
   };
 
   useEffect(() => {
@@ -45,7 +50,6 @@ export default function Home() {
 
   return (
     <>
-      {modalCep}
       <Header />
 
       <main ref={fundoRef}>
@@ -76,7 +80,7 @@ export default function Home() {
                 status={item.status}
               />
             ))}
-            {filtrados == "" &&(
+            {filtrados == "" && (
               <div>
                 <h2>Produto não encontrado</h2>
               </div>
