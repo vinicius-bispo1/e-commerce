@@ -5,10 +5,27 @@ import { FaLocationDot } from "react-icons/fa6";
 import { Produtos } from "../../Data";
 import Card from "../../Components/Card";
 import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
 export default function Home() {
   const [modalCep, setModalCep] = useState(false);
   const fundoRef = useRef(null);
+
+  const [cep, setCep] = useState("");
+  const [localidade, setLocalidade] = useState("");
+  const [logradouro, setLogradouro] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [complemento, setCompleto] = useState("");
+
+  const buscaCep = async () => {
+    // 01001000
+    const dados = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
+    console.log(dados.data);
+    setLocalidade(dados.data.localidade);
+    setLogradouro(dados.data.logradouro);
+    setBairro(dados.data.bairro);
+    setCompleto(dados.data.complemento);
+  };
 
   useEffect(() => {
     if (modalCep) {
@@ -16,7 +33,7 @@ export default function Home() {
     } else {
       fundoRef.current.style.filter = "blur(0px)";
     }
-  }, [modalCep]);
+  }, [modalCep, cep]);
 
   // Busca filmes
   const [busca, setBusca] = useState("");
@@ -35,7 +52,7 @@ export default function Home() {
         <S.ContainerBusca>
           <S.BoxCep onClick={() => setModalCep(!modalCep)}>
             <FaLocationDot />
-            <h2>Informe seu CEP</h2>
+            <h2>{cep ? `${logradouro} - ${localidade}` : `Informe seu CEP`}</h2>
           </S.BoxCep>
 
           <S.BoxInput>
@@ -78,17 +95,21 @@ export default function Home() {
             </S.ButtonModal>
             <S.ModalCampos>
               <div>
-                <input type="text" placeholder="Informe seu CEP aqui..." />
-                <button>
+                <input
+                  onChange={(e) => setCep(e.target.value)}
+                  type="text"
+                  placeholder="Informe seu CEP aqui..."
+                />
+                <button onClick={() => buscaCep()}>
                   <FaSearch />
                 </button>
               </div>
 
-              <p>CEP:</p>
-              <p>Rua:</p>
-              <p>Estado:</p>
-              <p>Bairro:</p>
-              <p>Bairro:</p>
+              <p>CEP: {cep}</p>
+              <p>Rua: {logradouro ? logradouro : "não encontrado"}</p>
+              <p>Estado: {localidade ? localidade : "não encontrado"}</p>
+              <p>Bairro: {bairro ? bairro : "não encontrado"}</p>
+              <p>complemento: {complemento ? complemento : "não encontrado"}</p>
             </S.ModalCampos>
           </S.BoxModal>
         </S.Modal>
