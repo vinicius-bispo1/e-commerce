@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Produtos } from "../../Data";
 import Card from "../../Components/Card";
+
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
@@ -18,6 +19,18 @@ export default function Home() {
     }
   }, [modalCep]);
 
+import { useState } from "react";
+
+export default function Home() {
+
+  // Busca filmes
+  const [busca, setBusca] = useState("")
+
+  //  funcionalidade de busca
+   const filtrados = Produtos.filter((item) =>
+    item.descricao.toLowerCase().includes(busca.toLowerCase()));
+
+
   return (
     <>
       {modalCep}
@@ -31,7 +44,14 @@ export default function Home() {
           </S.BoxCep>
 
           <S.BoxInput>
+
             <input type="text" placeholder="busque aqui seu produto" />
+
+            <input 
+            onChange={(e) => setBusca(e.target.value)} 
+            type="text" 
+            placeholder='busque aqui seu produto' />
+
             <FaSearch />
           </S.BoxInput>
         </S.ContainerBusca>
@@ -39,9 +59,14 @@ export default function Home() {
         {/* Produtos */}
         <S.ContainerProdutos>
           <S.BoxProdutos>
+
             {Produtos.map((item) => (
               <Card
                 style={{ color: "red" }}
+
+            {filtrados.map((item) => (
+              <Card style={{color: "red"}}
+
                 descricao={item.descricao}
                 preco={item.preco}
                 imagem={item.imagem}
