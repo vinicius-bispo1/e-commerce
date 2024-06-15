@@ -1,5 +1,4 @@
 import * as S from "./Styled";
-import Header from "../../Components/Header";
 import { FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Produtos } from "../../Data";
@@ -46,7 +45,6 @@ export default function Home() {
   return (
     <>
       {modalCep}
-      <Header />
 
       <main ref={fundoRef}>
         <S.ContainerBusca>

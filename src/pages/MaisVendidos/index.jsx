@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function index() {
+export default function MaisVendidos() {
   return (
-    <div>index</div>
+    <div>MaisVendidos</div>
   )
 }

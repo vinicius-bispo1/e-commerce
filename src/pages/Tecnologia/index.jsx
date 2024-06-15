@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function index() {
+export default function Tecnologia() {
   return (
-    <div>index</div>
+    <div>Tecnologia</div>
   )
 }
