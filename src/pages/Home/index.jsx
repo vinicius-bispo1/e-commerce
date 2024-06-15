@@ -53,13 +53,17 @@ export default function Home() {
           <S.BoxProdutos>
             {filtrados.map((item) => (
               <Card
-                style={{ color: "red" }}
                 descricao={item.descricao}
                 preco={item.preco}
                 imagem={item.imagem}
                 status={item.status}
               />
             ))}
+            {filtrados == "" &&(
+              <div>
+                <h2>Produto não encontrado</h2>
+              </div>
+            )}
           </S.BoxProdutos>
         </S.ContainerProdutos>
       </main>
