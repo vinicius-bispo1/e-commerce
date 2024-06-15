@@ -18,8 +18,11 @@ ul{
     ${center}
     justify-content: space-around;
     font-size: 23px;
-    color: #454C59;
     font-weight: 700;
+    a{
+        text-decoration: none;
+        color: #454C59;
+    }
 }
 `
 export const BoxIcon = styled.div`
@@ -29,4 +32,7 @@ color: #057d92;
 width: 8vw;
 ${center}
 justify-content: space-between;
+a{
+    color: #057d92;
+}
 `
