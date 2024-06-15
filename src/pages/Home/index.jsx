@@ -19,9 +19,6 @@ export default function Home() {
     }
   }, [modalCep]);
 
-import { useState } from "react";
-
-export default function Home() {
 
   // Busca filmes
   const [busca, setBusca] = useState("")
@@ -44,14 +41,10 @@ export default function Home() {
           </S.BoxCep>
 
           <S.BoxInput>
-
-            <input type="text" placeholder="busque aqui seu produto" />
-
             <input 
             onChange={(e) => setBusca(e.target.value)} 
             type="text" 
             placeholder='busque aqui seu produto' />
-
             <FaSearch />
           </S.BoxInput>
         </S.ContainerBusca>
@@ -59,14 +52,8 @@ export default function Home() {
         {/* Produtos */}
         <S.ContainerProdutos>
           <S.BoxProdutos>
-
-            {Produtos.map((item) => (
-              <Card
-                style={{ color: "red" }}
-
             {filtrados.map((item) => (
               <Card style={{color: "red"}}
-
                 descricao={item.descricao}
                 preco={item.preco}
                 imagem={item.imagem}
