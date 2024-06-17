@@ -1,7 +1,11 @@
-import React from 'react'
+import * as S from "./Styled";
 
 export default function Compras() {
   return (
-    <div>Compras</div>
-  )
+    <main>
+      <S.BoxTitle>
+        <h2>Compras</h2>
+      </S.BoxTitle>
+    </main>
+  );
 }

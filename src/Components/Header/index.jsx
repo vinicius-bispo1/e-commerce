@@ -21,7 +21,9 @@ export default function Header() {
         </ul>
       </S.BoxMenu>
       <S.BoxIcon>
-        <FaUser />
+        <Link to="perfil">
+          <FaUser />
+        </Link>
         <Link to="compras">
           <FaShoppingCart />
         </Link>
