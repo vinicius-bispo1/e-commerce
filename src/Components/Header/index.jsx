@@ -8,7 +8,10 @@ export default function Header() {
   return (
     <S.Header>
       <Link to="/">
-        <img src={web} alt="" />
+        <img
+          src={web}
+          alt=""
+        />
       </Link>
       <S.BoxMenu>
         <ul>
@@ -18,10 +21,10 @@ export default function Header() {
         </ul>
       </S.BoxMenu>
       <S.BoxIcon>
+        <FaUser />
         <Link to="compras">
-          <FaUser />
+          <FaShoppingCart />
         </Link>
-        <FaShoppingCart />
       </S.BoxIcon>
     </S.Header>
   );
