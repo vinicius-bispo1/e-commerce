@@ -49,8 +49,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-
       <main ref={fundoRef}>
         <S.ContainerBusca>
           <S.BoxCep onClick={() => setModalCep(!modalCep)}>
