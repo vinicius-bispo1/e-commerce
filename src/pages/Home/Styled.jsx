@@ -55,7 +55,7 @@ export const BoxProdutos = styled.section`
 
 export const Modal = styled.div`
   top: 35%;
-  width: 100vw;
+  width: 100%;
   display: flex;
   position: absolute;
   justify-content: center;
