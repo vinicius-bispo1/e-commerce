@@ -13,30 +13,12 @@ export default function Router() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route
-          path="/compras"
-          element={<Compras />}
-        />
-        <Route
-          path="/vendido"
-          element={<MaisVendidos />}
-        />
-        <Route
-          path="/eletros"
-          element={<Eletrodomestico />}
-        />
-        <Route
-          path="/tec"
-          element={<Tecnologia />}
-        />
-        <Route
-          path="/perfil"
-          element={<Perfil />}
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/compras" element={<Compras />} />
+        <Route path="/vendido" element={<MaisVendidos />} />
+        <Route path="/eletros" element={<Eletrodomestico />} />
+        <Route path="/tec" element={<Tecnologia />} />
+        <Route path="/perfil" element={<Perfil />} />
       </Routes>
     </BrowserRouter>
   );
