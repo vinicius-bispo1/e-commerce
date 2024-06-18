@@ -1,15 +1,15 @@
 import React from "react";
 import * as S from "./Styled.jsx";
 import { Link } from "react-router-dom";
-export default function Footer(menu) {
+export default function Footer({ menu }) {
   return (
     <S.Footer>
-      <section>
-        <h2>Voltar ao inicío</h2>
-      </section>
-      <section>
+      <S.Volta>
+        <a href={menu}>Voltar ao inicío</a>
+      </S.Volta>
+      <S.Informes>
         <ul>
-          <li>
+          <li className="destaque">
             <Link to="/compras">Meus pedidos</Link>
           </li>
           <li>
@@ -20,11 +20,11 @@ export default function Footer(menu) {
           </li>
         </ul>
         <ul>
-          <li>Contato</li>
+          <li className="destaque">Contato</li>
           <li>Github</li>
           <li>Linkedin</li>
         </ul>
-      </section>
+      </S.Informes>
     </S.Footer>
   );
 }

@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <>
-      <main id="top" ref={fundoRef}>
+      <main id="topo" ref={fundoRef}>
         <S.ContainerBusca>
           <S.BoxCep onClick={() => setModalCep(!modalCep)}>
             <FaLocationDot />
@@ -87,8 +87,7 @@ export default function Home() {
         </S.ContainerProdutos>
       </main>
 
-      <Footer sobeParaHeader="#top" />
-      <a href="#top">teste</a>
+      <Footer menu="#topo" />
 
       {/* Modal */}
       {modalCep && (
