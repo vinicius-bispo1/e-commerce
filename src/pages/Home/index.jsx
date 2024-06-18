@@ -5,6 +5,7 @@ import { Produtos } from "../../Data";
 import Card from "../../Components/Card";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import Footer from "../../Components/Footer";
 
 export default function Home() {
   const [modalCep, setModalCep] = useState(false);
@@ -49,7 +50,7 @@ export default function Home() {
 
   return (
     <>
-      <main ref={fundoRef}>
+      <main id="top" ref={fundoRef}>
         <S.ContainerBusca>
           <S.BoxCep onClick={() => setModalCep(!modalCep)}>
             <FaLocationDot />
@@ -86,6 +87,10 @@ export default function Home() {
         </S.ContainerProdutos>
       </main>
 
+      <Footer sobeParaHeader="#top" />
+      <a href="#top">teste</a>
+
+      {/* Modal */}
       {modalCep && (
         <S.Modal>
           <S.BoxModal>
