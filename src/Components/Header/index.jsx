@@ -1,6 +1,7 @@
 import * as S from "./Styled";
 import { FaUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
+import { IoCartOutline } from "react-icons/io5";
 import web from "../../assets/Web Compras.png";
 import { Link } from "react-router-dom";
 
@@ -8,10 +9,7 @@ export default function Header() {
   return (
     <S.Header>
       <Link to="/">
-        <img
-          src={web}
-          alt=""
-        />
+        <img src={web} alt="" />
       </Link>
       <S.BoxMenu>
         <ul>
@@ -24,7 +22,7 @@ export default function Header() {
         <Link to="perfil">
           <FaUser />
         </Link>
-        <Link to="compras">
+        <Link to="/compras">
           <FaShoppingCart />
         </Link>
       </S.BoxIcon>
