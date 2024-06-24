@@ -6,6 +6,7 @@ import Card from "../../Components/Card";
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Footer from "../../Components/Footer";
+import NaoEncontrado from "../../Components/NaoEncontrado";
 
 export default function Home() {
   const [modalCep, setModalCep] = useState(false);
@@ -61,7 +62,7 @@ export default function Home() {
             <input
               onChange={(e) => setBusca(e.target.value)}
               type="text"
-              placeholder="busque aqui seu produto"
+              placeholder="Busque aqui seu produto"
             />
             <FaSearch />
           </S.BoxInput>
@@ -70,17 +71,19 @@ export default function Home() {
         {/* Produtos */}
         <S.ContainerProdutos>
           <S.BoxProdutos>
-            {filtrados.map((item) => (
+            {filtrados.map((item,key) => (
+              <div key={key}>
               <Card
                 descricao={item.descricao}
                 preco={item.preco}
                 imagem={item.imagem}
                 status={item.status}
               />
+              </div>
             ))}
             {filtrados == "" && (
               <div>
-                <h2>Produto não encontrado</h2>
+                <NaoEncontrado/>
               </div>
             )}
           </S.BoxProdutos>
