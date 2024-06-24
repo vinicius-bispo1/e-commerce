@@ -1,7 +1,7 @@
 import * as S from "./Styled";
-import cesta from "../../assets/cesta.png"
-import truck from "../../assets/truck.png"
-import cartao from "../../assets/cartao.png"
+import cesta from "../../assets/cesta.png";
+import truck from "../../assets/truck.png";
+import cartao from "../../assets/cartao.png";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ComprasContext } from "../../context/ComprasContext";
@@ -15,9 +15,13 @@ export default function Compras() {
       </S.BoxTitle>
       <section>
         <S.BoxIcone>
-          <img src={cesta} alt="" />
-          <Link to="/entrega"><img src={truck} alt="" /></Link>
-          <Link to="/pagamento"><img src={cartao} alt="" /></Link>
+          <img src={cesta} alt="cesta de compras" />
+          <Link to="/entrega">
+            <img src={truck} alt="..." />
+          </Link>
+          <Link to="/pagamento">
+            <img src={cartao} alt="..." />
+          </Link>
         </S.BoxIcone>
 
         <div>
