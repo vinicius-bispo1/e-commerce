@@ -6,7 +6,7 @@ import { Produtos } from "./Data";
 
 export default function App() {
   const [array, setArray] = useState([]);
-  const [quantidade, setQuantidade] = useState(0);
+  const [quantidade, setQuantidade] = useState(1);
   const [itens, setItens] = useState(Produtos);
 
   return (
