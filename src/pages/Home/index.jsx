@@ -1,13 +1,15 @@
 import * as S from "./Styled";
+import axios from "axios";
+import { useContext, useEffect, useRef, useState } from "react";
+
+import { ComprasContext } from "../../context/ComprasContext";
+import { Produtos } from "../../Data";
+import NaoEncontrado from "../../Components/NaoEncontrado";
+import Footer from "../../Components/Footer";
+import Card from "../../Components/Card";
+
 import { FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import { Produtos } from "../../Data";
-import Card from "../../Components/Card";
-import { useContext, useEffect, useRef, useState } from "react";
-import axios from "axios";
-import Footer from "../../Components/Footer";
-import { ComprasContext } from "../../context/ComprasContext";
-import NaoEncontrado from "../../Components/NaoEncontrado";
 
 export default function Home() {
   const { itens, setItens, quantidade, setQuantidade, setArray, array } =
@@ -24,10 +26,8 @@ export default function Home() {
 
   const buscaCep = async () => {
     // 01001000
-
     try {
       const dados = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-      console.log(dados.data);
       setBairro(dados.data.bairro);
       setCompleto(dados.data.complemento);
       setLocalidade(dados.data.localidade);
@@ -45,14 +45,15 @@ export default function Home() {
     }
   }, [modalCep, cep]);
 
-  // Busca filmes
+  // Busca
   const [busca, setBusca] = useState("");
 
-  //  funcionalidade de busca
+  // Funcionalidade de busca
   const filtrados = Produtos.filter((item) =>
     item.descricao.toLowerCase().includes(busca.toLowerCase())
   );
 
+  // Produtos carrinho
   const addProduto = (id) => {
     let newProduto = itens.filter((e) => e.id === id);
     console.log(newProduto);

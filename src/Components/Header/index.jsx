@@ -1,15 +1,14 @@
 import * as S from "./Styled";
 import { FaUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
-import { IoCartOutline } from "react-icons/io5";
-import web from "../../assets/Web Compras.png";
 import { Link } from "react-router-dom";
+import web from "../../assets/Web Compras.png";
 
 export default function Header() {
   return (
     <S.Header>
       <Link to="/">
-        <img src={web} alt="" />
+        <img src={web} alt="..." />
       </Link>
       <S.BoxMenu>
         <ul>
