@@ -23,23 +23,27 @@ export const Produtos = [
     imagem: alexa,
     preco: 375.99,
     status: "à vista no Pix",
+    id: 0,
   },
   {
     descricao: "PlayStation 5 Standard Edition Branco + Marvels Spider Man",
     imagem: ps5,
     preco: 3799.99,
     status: "à vista no Pix",
+    id: 1,
   },
   {
     descricao: "Notebook Asus VivoBook 15 Intel Core i3 8GB 512GB",
     imagem: notebook,
     preco: 2499.99,
     status: "Indisponível",
+    id: 2,
   },
   {
     descricao: "Fone Bluetooth E6s TWS Sem Fio Para Celular Notebook",
     imagem: fone,
     preco: 38.55,
     status: "Indisponível",
+    id: 3,
   },
 ];

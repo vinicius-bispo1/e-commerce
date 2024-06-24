@@ -3,12 +3,17 @@ import { FaSearch } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Produtos } from "../../Data";
 import Card from "../../Components/Card";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Footer from "../../Components/Footer";
+import { ComprasContext } from "../../context/ComprasContext";
 import NaoEncontrado from "../../Components/NaoEncontrado";
 
+
 export default function Home() {
+  const { itens, setItens, quantidade, setQuantidade } =
+    useContext(ComprasContext);
+
   const [modalCep, setModalCep] = useState(false);
   const fundoRef = useRef(null);
 
@@ -48,6 +53,10 @@ export default function Home() {
   const filtrados = Produtos.filter((item) =>
     item.descricao.toLowerCase().includes(busca.toLowerCase())
   );
+
+  const addProduto = (id) => {
+    let newProduto = itens.filter((e) => e.id === id);
+  };
 
   return (
     <>
