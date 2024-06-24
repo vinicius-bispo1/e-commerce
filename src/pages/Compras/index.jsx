@@ -3,6 +3,8 @@ import cesta from "../../assets/cesta.png"
 import truck from "../../assets/truck.png"
 import cartao from "../../assets/cartao.png"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ComprasContext } from "../../context/ComprasContext";
 
 export default function Compras() {
   const { array } = useContext(ComprasContext);
